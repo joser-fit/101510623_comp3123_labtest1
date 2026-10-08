@@ -1,6 +1,6 @@
 // Question-2
 
-const resolvedPromise= function(){
+const delayedPromise= function(){
     
     return new Promise(function(resolve,rejecte){
         setTimeout(()=>{let success={'message':'delayed success'}
@@ -12,4 +12,4 @@ const resolvedPromise= function(){
     });
 }
 
-resolvedPromise().then((result)=>console.log(result));
+delayedPromise().then((result)=>console.log(result));
