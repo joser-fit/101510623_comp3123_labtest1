@@ -17,21 +17,17 @@ const lowerCaseWords= (arr)=>{
              resolve(strArray);
         }
         else{
-            reject('The Array has no string')
+            reject(' The Array has no string')
         }
         
-        
-        //const lowerCaseStr=strArray.map(elem=> elem.toLowerCase());
-        //console.log(strArray)
-        //console.log(lowerCaseStr)
        
 
  });
 }
 
 
-//const mixedArray=['PIZZA',10,true,29,false,'WINGS'];
-const mixedArray = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+const mixedArray=['PIZZA',10,true,29,false,'WINGS'];
+// const mixedArray = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]; // for checking if arry is only a number.
 const promise=lowerCaseWords(mixedArray);
 promise.then(function(data){
     console.log(data)
