@@ -21,5 +21,9 @@ for(const fileName of files){
    fs.unlinkSync(filePath); // Deleting each file
    
     //console.log(fileName);
+    // after emptying dir we gonna delete it now.
+
+    fs.rmdirSync(logsDirectory);
+    console.log("Logs Directory is removed !!!")
 }
 }
