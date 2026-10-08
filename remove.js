@@ -22,8 +22,7 @@ for(const fileName of files){
    
     //console.log(fileName);
     // after emptying dir we gonna delete it now.
-
-    fs.rmdirSync(logsDirectory);
-    console.log("Logs Directory is removed !!!")
 }
+  fs.rmdirSync(logsDirectory);
+    console.log("Logs Directory is removed !!!")
 }
