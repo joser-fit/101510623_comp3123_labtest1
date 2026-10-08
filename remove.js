@@ -14,4 +14,12 @@ const files=fs.readdirSync(logsDirectory);
 for(const fileName of files){
    console.log(fileName);
 }
+
+for(const fileName of files){
+   const filePath=path.join(logsDirectory,fileName);
+   console.log(`Deleting File: ${fileName}`);
+   fs.unlinkSync(filePath); // Deleting each file
+   
+    //console.log(fileName);
+}
 }
