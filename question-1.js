@@ -10,16 +10,21 @@ const lowerCaseWords= (arr)=>{
         
         const strArray=arr.filter(elemente =>{
             return typeof elemente === 'string'
-        });
+        }).map(elem=> elem.toLowerCase());;
 
-        console.log(strArray)
-        const lowerCaseStr=strArray.map(elem=> elem.toLowerCase());
-        console.log(lowerCaseStr)
+        
+        //const lowerCaseStr=strArray.map(elem=> elem.toLowerCase());
+        //console.log(strArray)
+        //console.log(lowerCaseStr)
+        resolve(strArray)
 
  });
 }
 
 
 const mixedArray=['PIZZA',10,true,29,false,'WINGS'];
-lowerCaseWords(mixedArray);
+const promise=lowerCaseWords(mixedArray);
+promise.then(function(data){
+    console.log(data)
+})
 
