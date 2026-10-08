@@ -2,8 +2,8 @@
 
 const resolvedPromise= function(){
     
-    return new Promise(function(resolve,rejecte){
-        setTimeout(()=>{let success={'message':'delayed success'}
+    return new Promise(function(resolve,reject){
+        setTimeout(()=>{let success={'message':'delayed success!'}
         
         //console.log(success);
         resolve(success)
@@ -14,16 +14,22 @@ const resolvedPromise= function(){
 
 
 
-const delayedEx= function(){
+const rejectedPromise= function(){
     
-    return new Promise(function(resolve,rejecte){
-        setTimeout(()=>{let success={'message':'delayed success'}
+    return new Promise(function(resolve,reject){
         
-        //console.log(success);
-        resolve(success)
+        setTimeout(()=>{let success={'message':'delayed success'}
+        try{
+            throw new Error(' Delayed exception!')
+        }catch(e){
+            //console.error(e);
+            reject({'error': 'delayed exception!'});
+        }
+        
     },500);
    
     });
 }
 
-resolvedPromise().then((result)=>console.log(result));
+resolvedPromise().then((result)=>console.log(result)); // resolved Promise
+rejectedPromise().catch(e=>console.log(e));  // rejected Promise
