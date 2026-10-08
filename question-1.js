@@ -8,16 +8,23 @@ const lowerCaseWords= (arr)=>{
             reject(Error('Error: The Entry is not an Array'))
         }
         
-        const hasStr= arr.some(element => typeof element==='string')
+        const hasStr= arr.some(element => typeof element==='string') 
+        
         if(hasStr){
-
+           const strArray=arr.filter(elemente =>{
+            return typeof elemente === 'string'})
+            .map(elem=> elem.toLowerCase());;
+             resolve(strArray);
+        }
+        else{
+            reject('The Array has no string')
         }
         
         
         //const lowerCaseStr=strArray.map(elem=> elem.toLowerCase());
         //console.log(strArray)
         //console.log(lowerCaseStr)
-        resolve(strArray)
+       
 
  });
 }
