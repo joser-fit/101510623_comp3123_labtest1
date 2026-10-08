@@ -8,3 +8,11 @@ if(!fs.existsSync(logsDirectory)){
 }
 
 //Change current working dir. to Logs
+
+process.chdir(logsDirectory);
+
+for(let i=1; i<=10; i++){
+    const fileName=`log${i}.txt`;
+    fs.writeFileSync(fileName,`This is log-${i}.`,'utf-8' );
+    console.log(fileName);
+}
